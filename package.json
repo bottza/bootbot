@@ -5,13 +5,14 @@
   "main": "main.js",
   "scripts": {
     "start": "cach node main.js",
-    "watch": "nodemon main.js"
+    "watch": "nodemon main.js",
+    "setup": "node setup.js"
   },
   "author": "Bottza",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
-    "cach": "^1.0.2",
+    "cach": "^1.0.3",
     "chalk": "^2.4.1",
     "coinflip": "^1.0.0",
     "discord.js": "^11.4.2",
@@ -20,6 +21,7 @@
     "libsodium-wrappers": "^0.7.3",
     "lowdb": "^1.0.0",
     "node-opus": "^0.2.7",
+    "prompts": "^1.1.0",
     "uws": "^9.14.0"
   },
   "devDependencies": {
