@@ -23,7 +23,7 @@ var fs = require("fs");
   } else {
     var string = "module.exports.token = \""
                + responses.token + "\";\n"
-               + "module.exports.token = \""
+               + "module.exports.owner = \""
                + responses.owner + "\";";
                var fs = require("fs");
     fs.writeFile("config.js", string, function(error) {
