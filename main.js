@@ -83,7 +83,7 @@ client.on("guildMemberRemove", (member) => {
     }).value();
     var embed = new RichEmbed()
       .setDescription("Today is a sad day.")
-      .setAuthor(member.user.username + " left", member.displayAvatarURL)
+      .setAuthor("@" + member.user.username + " left", member.displayAvatarURL)
       .setColor(0x00AE86)
       .setTimestamp();
     member.guild.channels.find("id", config.channel).send({
