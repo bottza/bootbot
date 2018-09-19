@@ -1,5 +1,6 @@
 # BootBot
 [![Discord](https://img.shields.io/discord/490867255144611850.svg?style=flat-square)](https://discord.io/bottza)
+[![Travis CI](https://img.shields.io/travis/com/bottza/bootbot/master.svg?style=flat-square)](https://travis-ci.com/bottza/bootbot)
 [![Depfu](https://img.shields.io/depfu/bottza/bootbot.svg?style=flat-square)](https://depfu.com/repos/bottza/bootbot)
 [![GitHub release](https://img.shields.io/github/release/bottza/bootbot.svg?style=flat-square)](https://github.com/bottza/bootbot/releases)
 
