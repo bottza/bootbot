@@ -12,7 +12,7 @@ module.exports = class ReplyCommand extends Command {
   }
 
   run(msg) {
-    msg.say("https://bit.ly/2D6rPDD");
+    msg.say("Here's a link to invite me to your server: https://bit.ly/2D6rPDD");
   }
 }
 ;
