@@ -2,6 +2,7 @@ const {CommandoClient} = require("discord.js-commando");
 const {RichEmbed} = require("discord.js");
 const path = require("path");
 const chalk = require("chalk");
+const Long = require("long");
 
 const low = require("lowdb")
 const FileSync = require("lowdb/adapters/FileSync")
