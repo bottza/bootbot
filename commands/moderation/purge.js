@@ -24,7 +24,7 @@ module.exports = class SayCommand extends Command {
   }
 
   async run(msg, {limit}) {
-    msg.delete();
+    await msg.delete();
     var fetched = await msg.channel.fetchMessages({
       limit: limit
     });
