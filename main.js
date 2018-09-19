@@ -92,13 +92,13 @@ client.on("guildMemberRemove", (member) => {
   }
 });
 
-client.on("raw", packet => {
+client.on("raw", (packet) => {
   if (!["MESSAGE_REACTION_ADD", "MESSAGE_REACTION_REMOVE"].includes(packet.t)) return;
-  const channel = client.channels.get(packet.d.channel_id);
+  var channel = client.channels.get(packet.d.channel_id);
   if (channel.messages.has(packet.d.message_id)) return;
   channel.fetchMessage(packet.d.message_id).then(message => {
-    const emoji = packet.d.emoji.id ? `${packet.d.emoji.name}:${packet.d.emoji.id}` : packet.d.emoji.name;
-    const reaction = message.reactions.get(emoji);
+    var emoji = packet.d.emoji.id ? `${packet.d.emoji.name}:${packet.d.emoji.id}` : packet.d.emoji.name;
+    var reaction = message.reactions.get(emoji);
     if (packet.t === "MESSAGE_REACTION_ADD") {
       client.emit("messageReactionAdd", reaction, client.users.get(packet.d.user_id));
     }
@@ -107,6 +107,29 @@ client.on("raw", packet => {
     }
   });
 });
+
+client.on("guildCreate", async (guild) => {
+  var channel = await getDefaultChannel(guild);
+  var embed = new RichEmbed()
+    .setDescription("I'm glad to join your server! Use `;;help` to get started.")
+    .setAuthor(client.user.username, client.user.displayAvatarURL)
+    .setColor(0x00AE86)
+    .setTimestamp();
+  channel.send(embed);
+});
+
+const getDefaultChannel = async (guild) => {
+  if (guild.channels.has(guild.id))
+    return guild.channels.get(guild.id)
+  if (guild.channels.exists("name", "general"))
+    return guild.channels.find("name", "general");
+  return guild.channels
+    .filter(c => c.type === "text" &&
+      c.permissionsFor(guild.client.user).has("SEND_MESSAGES"))
+    .sort((a, b) => a.position - b.position ||
+      Long.fromString(a.id).sub(Long.fromString(b.id)).toNumber())
+    .first();
+}
 
 db.defaults({
   rulePosts: [],
