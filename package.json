@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cach node main.js",
     "test": "ava",
-    "watch": "nodemon main.js",
+    "watch": "nodemon --exec cach node main.js",
     "setup": "node setup.js"
   },
   "author": "Bottza",

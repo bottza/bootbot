@@ -21,16 +21,18 @@ Enter your token and then copy your user ID in Discord by enabling developer mod
 
 ## Running
 
-One of the following:
 ```
 $ npm start
-$ cach node main.js
 ```
 
 ## Development
 
-One of the following:
 ```
 $ npm run watch
-$ nodemon main.js
+```
+
+## Testing
+
+```
+$ npm test
 ```
