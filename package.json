@@ -21,7 +21,7 @@
     "erlpack": "discordapp/erlpack",
     "libsodium-wrappers": "^0.7.3",
     "lowdb": "^1.0.0",
-    "node-opus": "^0.2.7",
+    "node-opus": "^0.3.0",
     "prompts": "^1.1.0",
     "uws": "^99.0.0"
   },
