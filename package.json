@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "cach node main.js",
+    "test": "ava",
     "watch": "nodemon main.js",
     "setup": "node setup.js"
   },
@@ -25,6 +26,7 @@
     "uws": "^9.14.0"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
     "nodemon": "^1.18.4"
   }
 }
