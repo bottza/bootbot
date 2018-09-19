@@ -6,18 +6,27 @@ module.exports = class SayCommand extends Command {
       name: "purge",
       group: "moderation",
       memberName: "purge",
-      description: "Clears the last 100 messages in a channel.",
-      examples: ["purge"],
-      userPermissions: ["ADMINISTRATOR"],
+      description: "Clears the last n messages in a channel.",
+      examples: ["purge", "purge 6"],
+      userPermissions: ["MANAGE_MESSAGES"],
       clientPermissions: ["MANAGE_MESSAGES"],
-      guildOnly: true
+      guildOnly: true,
+      args: [
+        {
+          key: "limit",
+          prompt: "How many messages should I purge?",
+          type: "integer",
+          default: 99,
+          validate: value => value <= 99 ? true : "The limit should be less than or equal to 99."
+        }
+      ]
     });
   }
 
-  async run(msg) {
+  async run(msg, {limit}) {
     msg.delete();
     var fetched = await msg.channel.fetchMessages({
-      limit: 99
+      limit: limit
     });
     msg.channel.bulkDelete(fetched);
   }
