@@ -12,7 +12,7 @@ module.exports = class ReplyCommand extends Command {
   }
 
   run(msg) {
-    msg.say("Here's a link to Bottza's Discord server. Bottza is the group of people who made me. https://discord.io/bottza");
+    msg.say("Here's a link to Bottza's Discord server. Bottza is the group of people who made me. You can get support for me here. https://discord.io/bottza");
   }
 }
 ;
