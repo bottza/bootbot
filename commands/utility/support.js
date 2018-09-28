@@ -3,11 +3,11 @@ const {Command} = require("discord.js-commando");
 module.exports = class ReplyCommand extends Command {
   constructor(client) {
     super(client, {
-      name: "bottza",
+      name: "support",
       group: "utility",
-      memberName: "bottza",
-      description: "Posts the invite for Bottza's Discord.",
-      examples: ["bottza"]
+      memberName: "support",
+      description: "Posts the invite for Bottza's Discord support server.",
+      examples: ["support"]
     });
   }
 
