@@ -58,17 +58,17 @@ client.on("guildMemberAdd", (member) => {
   if (msgs.find({
       server: member.guild.id
     }).value()) {
-    var config = msgs.find({
+    var foundConfig = msgs.find({
       server: member.guild.id
     }).value();
     var embed = new RichEmbed()
       .setDescription("Welcome to our server! Make sure to look at "
-        + member.guild.channels.find("id", config.rules)
+        + member.guild.channels.find("id", foundConfig.rules)
         + ".")
       .setAuthor("@" + member.user.username + " joined", member.displayAvatarURL)
       .setColor(0x00AE86)
       .setTimestamp();
-    member.guild.channels.find("id", config.channel).send({
+    member.guild.channels.find("id", foundConfig.channel).send({
       embed
     });
   }
@@ -79,7 +79,7 @@ client.on("guildMemberRemove", (member) => {
   if (msgs.find({
       server: member.guild.id
     }).value()) {
-    var config = msgs.find({
+    var foundConfig = msgs.find({
       server: member.guild.id
     }).value();
     var embed = new RichEmbed()
@@ -87,7 +87,7 @@ client.on("guildMemberRemove", (member) => {
       .setAuthor("@" + member.user.username + " left", member.displayAvatarURL)
       .setColor(0x00AE86)
       .setTimestamp();
-    member.guild.channels.find("id", config.channel).send({
+    member.guild.channels.find("id", foundConfig.channel).send({
       embed
     });
   }
