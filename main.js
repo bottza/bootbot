@@ -38,16 +38,18 @@ client.on("messageReactionAdd", (reaction, user) => {
   var posts = db.get("rulePosts");
   if (posts.find({
       id: reaction.message.id,
-      emoji: reaction.emoji.name
+      emoji: reaction.emoji.id
     }).value()) {
+    console.log(chalk.cyan("Arrived!"));
     var member = reaction.message.guild.member(user);
     try {
       member.addRole(reaction.message.guild.roles.find("id", posts.find({
         id: reaction.message.id,
-        emoji: reaction.emoji.name
+        emoji: reaction.emoji.id
       }).value().role));
-    } catch (error) {
-      console.log(error);
+      member.send("Congratulations on reading the rules! You're now verified. :D")
+    } catch(error) {
+      console.log(chalk.red(error));
       user.send("Error giving you the role! You should contact an admin.");
     }
   }

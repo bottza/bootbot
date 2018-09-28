@@ -42,14 +42,18 @@ module.exports = class SayCommand extends Command {
 
   async run(msg, {content, channel, emoji, role}) {
     try {
-      var emojiObj = this.client.emojis.find("name", emoji);
+      var emojiObj = this.client.emojis.find("id", emoji.slice(-19, -1));
     } catch (error) {
       return msg.say("That emoji wasn't found.");
     }
-    var post = await channel.send("@everyone\nPlease read the rules:\n" + content + "\nReact with " + emojiObj + " to get verified.");
-    await post.react(emojiObj);
+    try {
+      var post = await channel.send("@everyone\nPlease read the rules:\n" + content + "\nReact with " + emojiObj + " to get verified.");
+      await post.react(emojiObj);
+    } catch(error) {
+      return msg.say("Sorry, but I was unable to do that. Did you use a custom emoji?");
+    }
     db.get("rulePosts").push({
-      emoji: emoji,
+      emoji: emojiObj.id,
       id: post.id,
       role: role.id
     }).write();
