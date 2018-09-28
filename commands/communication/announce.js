@@ -29,6 +29,8 @@ module.exports = class SayCommand extends Command {
     if (!msg.member.guild.channels.find("id", channel.id).permissionsFor(msg.member).has("SEND_MESSAGES")) {
       return msg.reply("You do not have permission to use the `announce` command in that channel.");
     }
+    var ping = await channel.send("@everyone");
+    await ping.delete();
     var embed = new RichEmbed()
       .setDescription(content)
       .setAuthor(msg.author.username, msg.author.displayAvatarURL)
