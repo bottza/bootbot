@@ -19,7 +19,7 @@
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
     "erlpack": "discordapp/erlpack",
-    "libsodium-wrappers": "^0.7.3",
+    "libsodium-wrappers": "^0.7.5",
     "long": "^4.0.0",
     "lowdb": "^1.0.0",
     "node-opus": "^0.3.0",
