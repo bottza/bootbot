@@ -14,7 +14,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cach": "^1.0.5",
-    "chalk": "^2.4.1",
+    "chalk": "^3.0.0",
     "coinflip": "^1.0.0",
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
