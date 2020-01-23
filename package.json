@@ -12,7 +12,7 @@
   "author": "Bottza",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.2",
     "cach": "^1.0.5",
     "chalk": "^2.4.1",
     "coinflip": "^1.0.0",
