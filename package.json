@@ -24,7 +24,7 @@
     "lowdb": "^1.0.0",
     "node-opus": "^0.3.0",
     "prompts": "^1.2.1",
-    "uws": "^99.0.0"
+    "uws": "^200.0.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
