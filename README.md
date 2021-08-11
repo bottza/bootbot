@@ -1,3 +1,7 @@
+> 🚩 **This project is archived!** 🚩
+> 
+> *This project is no longer relevant, and I don't find it worthwhile continuing development.*
+
 # BootBot
 [![Discord](https://img.shields.io/discord/490867255144611850.svg?style=flat-square)](https://discord.io/bottza)
 [![Travis CI](https://img.shields.io/travis/com/bottza/bootbot/master.svg?style=flat-square)](https://travis-ci.com/bottza/bootbot)
